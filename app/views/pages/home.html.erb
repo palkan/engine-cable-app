@@ -2,15 +2,31 @@
   <div class="column">&nbsp;</div>
   <div class="column center">
     <div class="rows">
-      <div class="row"><h1>Robots & Martians</h1></div>
-      <div class="columns row">
-        <%= link_to page_path("robots"), class: "column" do %>
-          <%= image_tag "bot" %>
-        <% end %>
-        <%= link_to page_path("martians"), class: "column" do %>
-          <%= image_tag "martians" %>
-        <% end %>
+      <div class="row center">
+        <h1 class="title">Robots & Martians</h1>
       </div>
-  </div>
+      <div class="row">
+        <p>
+          These two chats ("Robots" and "Martians") are connected to two different
+          Action Cable servers
+        </p>
+      </div>
+      <div class="columns row">
+        <div class="column center">
+          <%= link_to page_path("robots"), class: "column center" do %>
+            <div style="width:100%;">
+              <%= image_tag "/bot.png" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="column center">
+          <%= link_to page_path("martians"), class: "column center" do %>
+            <div style="width:100%;">
+              <%= image_tag "/martians.png" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   <div class="column">&nbsp;</div>
 </div>

@@ -1,8 +1,92 @@
 @charset "utf-8";
 
-@import "normalize.css/normalize";
-
 @import "bourbon";
 @import "neat";
 
 @import "base/base";
+
+h1.title {
+  font-size: modular-scale(5);
+}
+
+img {
+  max-width: 200px;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 0;
+  padding-right: 50px;
+  font-size: modular-scale(2);
+}
+
+.columns {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.column {
+  display: flex;
+  align-content: center;
+  align-self: flex-start;
+
+  &:not(:first-child) {
+    margin-left: 60px;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+}
+
+.rows {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+
+  &:not(:first-child) {
+    margin-top: 30px;
+  }
+
+  &.center {
+    justify-content: center;
+  }    
+}
+
+.chat {
+  min-height: 50vh;
+}
+
+.messages {
+  overflow-y: scroll;
+  flex-grow: 100;
+  
+  .message {
+    padding: 10px;
+    background-color: azure;
+    align-self: flex-start;
+    &.owned {
+      align-self: flex-end;
+      background-color: #1565c0;
+      color: white;
+    }
+    &.bot {
+      background-color: rgb(219, 6, 6);
+      color: white;
+    }
+    &.martian {
+      background-color: olive;
+      color: white;
+    }
+  }
+}

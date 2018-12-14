@@ -1,17 +1,19 @@
 <div class="columns" data-controller="robots">
-  <div class="column">&nbsp;</div>
-  <div class="column center">
-    <div class="rows">
-      <div class="row grow messages" id="content" data-target="robots.messages">
+  <div class="column grow">&nbsp;</div>
+  <div class="column center grow">
+    <div class="rows chat grow">
+      <div class="row grow messages rows" id="content" data-target="robots.messages">
         <em><small>There gonna be something...</small></em>
       </div>
       <div class="row">
-        <form class="rows" data-action="robots#handleMessage">
+        <form class="rows grow" data-action="robots#handleMessage">
           <input class="row" type="text" name="message" data-target="robots.input"/>
           <button type="submit" class="submit-btn">Send Message</button>
         </form>
       </div>
     </div>
   </div>
-  <div class="column">&nbsp;</div>
+  <div class="column grow">
+    <%= image_tag "/bot.png", size: "200x200" %>
+  </div>
 </div>
