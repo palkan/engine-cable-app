@@ -5,7 +5,7 @@ ruby '2.5.1'
 
 gem "rails", github: "palkan/rails", branch: "chore/action-cable-enginify"
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 5.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bourbon', '~> 5.0'
