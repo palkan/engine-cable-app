@@ -1,7 +1,7 @@
 @charset "utf-8";
 
-@import "bourbon";
-@import "neat";
+@import "bourbon/core/bourbon";
+@import "bourbon-neat/core/neat";
 
 @import "base/base";
 
@@ -60,7 +60,7 @@ nav {
 
   &.center {
     justify-content: center;
-  }    
+  }
 }
 
 .chat {
@@ -70,7 +70,7 @@ nav {
 .messages {
   overflow-y: scroll;
   flex-grow: 100;
-  
+
   .message {
     padding: 10px;
     background-color: azure;
