@@ -1,6 +1,6 @@
-// require chat
+import ChatController from "controllers/chat_controller";
 
-class Martians extends Chat {
+export default class MartiansController extends ChatController {
   connect() {
     this.channel = App.martians_cable.subscriptions.create("Martians::HumanChannel",
     {

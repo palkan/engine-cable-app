@@ -4,10 +4,11 @@
     <title>CableEngine</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application" %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
     <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
-    <%= javascript_include_tag 'application' %>
+    <%= javascript_importmap_tags %>
   </head>
 
   <body>
