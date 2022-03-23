@@ -1,4 +1,6 @@
-class Chat extends Stimulus.Controller {
+import { Controller } from "@hotwired/stimulus";
+
+export default class ChatController extends Controller {
   static get targets() {
     return ['messages', 'input'];
   }

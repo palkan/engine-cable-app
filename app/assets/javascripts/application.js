@@ -1,2 +1,0 @@
-//= require cable
-//= require stimulus

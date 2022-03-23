@@ -1,6 +1,6 @@
-// require chat
+import ChatController from "controllers/chat_controller";
 
-class Robots extends Chat {
+export default class RobotsController extends ChatController {
   connect() {
     this.channel = App.cable.subscriptions.create("Robots::BeepChannel",
     {
