@@ -1,15 +1,25 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby "~> 3.1.0"
 
-gem "rails", github: "palkan/rails", branch: "chore/action-cable-enginify"
+gem "rails", "~> 7.0.0"
+
+# Incompatible changes with Psych 4.0.0 and Ruby 3.1.0
+# https://bugs.ruby-lang.org/issues/17866
+gem "psych", "< 4"
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-gem 'bourbon', '~> 5.0'
-gem 'neat', '~> 2.1'
+# CSS in Rails with Tailwind, PostCSS, and Sass via Node.js.
+gem "cssbundling-rails"
+# Modern Rails assets pipeline
+gem "propshaft"
+# Manage modern JavaScript in Rails without transpiling or bundling.
+gem "importmap-rails"
+# A utility-first CSS framework
+gem "tailwindcss-rails"
+# Use Stimulus in your Ruby on Rails app
+gem "stimulus-rails"
 
 gem 'high_voltage'
 
@@ -18,11 +28,6 @@ gem 'faker'
 gem 'martians', path: "engines/martians"
 
 group :development, :test do
-  gem 'pry-byebug', platforms: [:mri, :mingw, :x64_mingw]
-end
-
-group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[mri mingw x64_mingw]
 end
