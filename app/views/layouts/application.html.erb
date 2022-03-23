@@ -13,7 +13,9 @@
 
   <body>
     <nav>
-      <div><a href="/">Home</a></div>
+      <% unless current_page?(root_path) %>
+        <div><a href="/">Home</a></div>
+      <% end %>
     </nav>
     <%= yield %>
   </body>
