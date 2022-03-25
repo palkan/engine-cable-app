@@ -19,7 +19,7 @@ Bundler.require(*Rails.groups)
 module CableEngine
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.2
+    config.load_defaults 7.0
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
@@ -28,5 +28,8 @@ module CableEngine
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.action_cable.disable_request_forgery_protection = true
+    config.martians_cable.disable_request_forgery_protection = true
   end
 end
