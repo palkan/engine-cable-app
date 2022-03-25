@@ -6,4 +6,3 @@ import RobotsController from "controllers/robots_controller";
 
 application.register('robots', RobotsController);
 application.register('martians', MartiansController);
-

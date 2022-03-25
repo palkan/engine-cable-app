@@ -16,8 +16,6 @@ gem "cssbundling-rails"
 gem "propshaft"
 # Manage modern JavaScript in Rails without transpiling or bundling.
 gem "importmap-rails"
-# A utility-first CSS framework
-gem "tailwindcss-rails"
 # Use Stimulus in your Ruby on Rails app
 gem "stimulus-rails"
 
