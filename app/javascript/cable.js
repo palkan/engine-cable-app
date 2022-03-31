@@ -11,6 +11,7 @@ import * as ActionCable from "@rails/actioncable";
 
   const martiansUrl = document.head.querySelector(`meta[name='martians-cable-url']`).getAttribute('content');
   App.martians_cable = ActionCable.createConsumer(`${martiansUrl}?martian=1&uid=${uid}`);
+
   App.martians_cable.uid = uid;
 
 }).call(window);

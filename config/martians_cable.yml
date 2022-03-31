@@ -1,5 +1,5 @@
 default: &default
-  adapter: async
+  adapter: <%= ENV.fetch("ACTION_CABLE_ADAPTER", "any_cable") %>
   channel_prefix: mars_
 
 development:
