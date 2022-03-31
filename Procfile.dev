@@ -1,2 +1,5 @@
 web: bin/rails server -p 3000 -b 0.0.0.0
 css: yarn build:css --watch
+anycable: bundle exec anycable
+ws: anycable-go --port=8080 --path=/cable
+ws-martian: anycable-go --port=8081 --path=/martians
