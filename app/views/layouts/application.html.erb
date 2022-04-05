@@ -4,6 +4,8 @@
     <title>CableEngine</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= action_cable_meta_tag %>
+    <%= tag "meta", name: "martians-cable-url", content: Martians.cable.url || martians.cable_path %>
     <%= stylesheet_link_tag "application" %>
 
     <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>

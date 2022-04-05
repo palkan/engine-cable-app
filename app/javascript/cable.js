@@ -4,10 +4,13 @@ import * as ActionCable from "@rails/actioncable";
   this.App || (this.App = {});
 
   const uid = (Date.now() + ((Math.random() * 100)|0)).toString();
-  App.cable = ActionCable.createConsumer('/cable?uid=' + uid);
+
+  const cableUrl = document.head.querySelector(`meta[name='action-cable-url']`).getAttribute('content');
+  App.cable = ActionCable.createConsumer(`${cableUrl}?uid=${uid}`);
   App.cable.uid = uid;
 
-  App.martians_cable = ActionCable.createConsumer('/martians/cable?martian=1&uid=' + uid);
+  const martiansUrl = document.head.querySelector(`meta[name='martians-cable-url']`).getAttribute('content');
+  App.martians_cable = ActionCable.createConsumer(`${martiansUrl}?martian=1&uid=${uid}`);
   App.martians_cable.uid = uid;
 
 }).call(window);
