@@ -3,7 +3,17 @@ Rails.application.configure do
   config.after_initialize do
     if AnyCable::Rails.enabled?
       config.action_cable.url = ActionCable.server.config.url = ENV.fetch("CABLE_URL", "ws://localhost:8080/cable")
-      config.martians_cable.url = ENV.fetch("CABLE_URL", "ws://localhost:8081/cable")
+      config.martians_cable.url = ENV.fetch("MARTIANS_CABLE_URL", "ws://localhost:8081/martians")
+
+      AnyCable.connection_factory = AnyCable::Rails::ConnectionFactory.new do
+        map "/cable" do
+          ApplicationCable::Connection
+        end
+
+        map "/martians" do
+          Martians::Connection
+        end
+      end
     end
   end
   # Settings specified here will take precedence over those in config/application.rb.
